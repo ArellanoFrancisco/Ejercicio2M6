@@ -1,35 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo"
     tools:context=".View.SecondFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/button_second"
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/previous"
-            app:layout_constraintBottom_toTopOf="@id/textview_second"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textview_second"
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/textname"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:gravity="center_vertical"
+                android:text="@string/Nombre"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                tools:ignore="TextSizeCheck" />
+
+            <TextView
+                android:id="@+id/textprice"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:gravity="center_vertical"
+                android:text="@string/Precio"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/textquantity"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:gravity="center_vertical"
+                android:text="@string/Cantidad"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                tools:ignore="TextSizeCheck" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/lorem_ipsum"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button_second" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.core.widget.NestedScrollView>
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="159dp">
+
+            <EditText
+                android:id="@+id/nombreProducto"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@android:drawable/editbox_background"
+                android:backgroundTint="@color/white"
+                android:hint="@string/inserte"
+                android:textColorHint="#4F5051"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                tools:ignore="Autofill,DuplicateSpeakableTextCheck,VisualLintTextFieldSize" />
+
+            <EditText
+                android:id="@+id/precioProducto"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@android:drawable/editbox_background"
+                android:backgroundTint="@color/white"
+                android:textColorHint="#4F5051"
+                android:hint="@string/inserte"
+                android:inputType="number|numberSigned"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                tools:ignore="Autofill,VisualLintTextFieldSize" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@android:drawable/editbox_background"
+                android:backgroundTint="@color/white"
+                android:textColor="#4F5051"
+                android:dropDownWidth="wrap_content"
+                android:dropDownSelector="@color/black"
+                android:textAlignment="center"
+                android:verticalScrollbarPosition="right" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/TotalProducto"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@android:drawable/editbox_background"
+        android:backgroundTint="@color/white"
+        android:drawableLeft="@drawable/money_24"
+        android:inputType="numberSigned"
+        android:text="@string/total"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:ignore="TextViewEdits" />
+
+    <Button
+        android:id="@+id/buttonAcept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="156dp"
+        android:text="@string/Aceptar"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TotalProducto" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

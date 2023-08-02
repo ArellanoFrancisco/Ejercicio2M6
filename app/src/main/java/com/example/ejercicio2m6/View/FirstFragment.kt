@@ -33,14 +33,17 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonFirst.setOnClickListener {
+        binding.button1.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+        }
+        binding.button2.setOnClickListener{
+            findNavController().navigate(R.id.action_FirstFragment_to_thirdFragment)
         }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding = null
+      // _binding = null
 
     }
 }

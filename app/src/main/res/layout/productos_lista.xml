@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:drawable/editbox_background_normal"
+    android:backgroundTint="@color/material_dynamic_neutral80"
+    android:orientation="vertical"
+    android:paddingStart="30dp"
+    android:paddingEnd="30dp">
+
+    <TextView
+        android:id="@+id/nombreRV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Nombre"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/precioRV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Precio"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/cantidadRV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Cantidad"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+</LinearLayout>
